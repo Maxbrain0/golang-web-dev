@@ -8,9 +8,31 @@
 
 {{range .}}
 
-<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
-
+<h1>Year - {{.AcaYear}}</h1>
+{{if .Fall.Term}}
+<h2>Term - {{.Fall.Term}}</h2>
+  <ul>
+    {{range .Fall.Courses}}
+       <li>Course - {{.Name}}, {{.Number}}, {{.Units}} Units</li>
+    {{end}}
+  </ul>
 {{end}}
-
+{{if .Spring.Term}}
+<h2>Term - {{.Spring.Term}}</h2>
+  <ul>
+    {{range .Spring.Courses}}
+       <li>Course - {{.Name}}, {{.Number}}, {{.Units}} Units</li>
+    {{end}}
+  </ul>
+{{end}}
+{{if .Summer.Term}}
+<h2>Term - {{.Summer.Term}}</h2>
+  <ul>
+    {{range .Summer.Courses}}
+       <li>Course - {{.Name}}, {{.Number}}, {{.Units}} Units</li>
+    {{end}}
+  </ul>
+{{end}}
+{{end}}
 </body>
 </html>
